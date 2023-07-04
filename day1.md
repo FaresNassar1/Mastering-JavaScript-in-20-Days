@@ -1,5 +1,6 @@
 # JavaScript 1# Day Training
 ---
+Note: Download the file for a better view
 
 Welcome to the first day of JavaScript training! In this training session, we will introduce you to the fundamentals of JavaScript, a popular programming language used for web development. This README file will provide you with an overview of what will be covered during the training and some essential information to get started.
 
