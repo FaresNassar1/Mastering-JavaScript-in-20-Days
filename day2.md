@@ -9,7 +9,8 @@
 
 
 
-##Operators 
+##Operators
+
 ####A_O
 ###`+ - * /`
 - `"fares"+"!"`
