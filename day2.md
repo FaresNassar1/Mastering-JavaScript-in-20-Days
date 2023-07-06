@@ -82,9 +82,24 @@ the result **[1,2,3,4,5,6]**
 "Mutable" data can be edited (e.g. Arrays)    
 "Immutable" data always stays the same (e.g. strings & other primitives)**
 `let letVariable = "original value";
+
 letVariable = "new value";`Yes 
+
 `const constVariable = "original value";
+
 constVariable = "new Value";` No, **constant**
+
+####`let arr=[1,2,3]`
+
+`let arr2=arr`=>arr2=[1,2,3]
+
+`arr[1]=4`then `arr=[1,4,3]`
+
+what do you think about arr2 ???
+
+it will be take the new value 😹
+
+`arr2=[1,4,3]`
 
 #....
 ---
