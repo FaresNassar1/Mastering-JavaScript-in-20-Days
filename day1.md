@@ -49,9 +49,12 @@ Type commands in the console to retrieve:
 #### 4. `document.querySelector("h2").textContent`
 ---
 ####DOM Editing
+
 ==EXAMPLE==
+
 change page title
-`document.title="My page"`
+
+```javascript document.title="My page```
 
 replace the text of the #p1-name element
 `document.getElementById("p1-name").textContent = "fares"
