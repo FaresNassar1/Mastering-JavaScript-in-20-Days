@@ -104,4 +104,54 @@ it will be take the new value 😹
 #....
 ---
 
-####**object The next step**...........
+## Coding Exercises
+
+### [Profile Lookup](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/profile-lookup)
+
+#### My Solution
+
+
+```javascript
+// Example 1: Variable Hoisting
+console.log(x); // Output: undefined
+var x = 10;
+console.log(x); // Output: 10
+
+// Example 2: Function Hoisting
+hoistedFunction(); // Output: "Hello, World!"
+
+function hoistedFunction() {
+  console.log("Hello, World!");
+}
+
+```
+
+### [Copy Array Items Using slice()](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-data-structures/copy-array-items-using-slice)
+
+#### My Solution
+
+
+```javascript
+function forecast(arr) {
+  return arr.slice(2,4);
+}
+
+console.log(forecast(['cold', 'rainy', 'warm', 'sunny', 'cool', 'thunderstorms']));
+
+```
+
+### [Combine Arrays with the Spread Operator](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-data-structures/combine-arrays-with-the-spread-operator)
+
+#### My Solution
+
+
+```javascript
+function spreadOut() {
+  let fragment = ['to', 'code'];
+  let sentence=['learning',...fragment,'is','fun'];
+  return sentence;
+}
+console.log(spreadOut());
+
+```
+
