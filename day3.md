@@ -7,7 +7,7 @@
 - [Quiz Project Functions](#function)
 
 ---
-##Object
+## Object
 
 Objects collect multiple values together to describe more complex data
 
@@ -15,14 +15,16 @@ Objects collect multiple values together to describe more complex data
 **note** `typeof ["fares"]`=>object
 `typeof{snack:"chips"}`=>object
 
-`const fares= {
+```javascript
+const fares= {
 name:"Fares",
 home:"Hebron",
 languages:["English","Arabic"],
 pet:null,
 vehicle:"vespa",
 hobbies:["travel","climbing","gaming","lindy hop"]
-};`
+};
+```
 
 objects let us point at related values using properties in the object.
 
@@ -83,7 +85,7 @@ Math.abs(-5);
 ```
 
 ---
-##Quiz Project
+## Quiz Project
 
 #### [Part one (Quiz.js)](https://anjana.dev/javascript-first-steps/2-jsquiz-starter.html)
 
@@ -112,7 +114,7 @@ Math.abs(-5);
 ```
 ---
 
-###Function
+### Function
 Parameters & Arguments
 ```javascript
 function add(x, y) {
@@ -130,7 +132,7 @@ const sumx=sum(3);
 //with give ==>9
 
 ```
-###Arrow functions
+### Arrow functions
 
 ```javascript
 function square(x) {
@@ -140,7 +142,7 @@ function square(x) {
 
 const square = (x) => x*x; 
 ```
-###Scope
+### Scope
 
 Scopes are nested within the program
 The widest scope is the global scope
