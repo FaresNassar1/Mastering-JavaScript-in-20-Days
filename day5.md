@@ -84,6 +84,55 @@ function whyIsntThisWorking(input) {
 * You can also use the browser's debugger to pause JS and inspect what's happening
 JAVA
 
-
-
 ---
+
+## [Task requirements ](https://github.com/orjwan-alrajaby/gsg-expressjs-backend-training-2023/blob/main/learning-sprint-1/week1-day5-task/task.md)
+
+### My Solution 
+
+```javascript 
+const getElements = document.getElementById("characterList");
+const fetchCharacters = async () => { 
+
+    try {
+    const url = "https://rickandmortyapi.com/api/character?status=alive";
+    const response = await fetch(url);
+    const data = await response.json();
+    const characters = data.results.filter(
+      (character) => (character.status = "Alive")
+    );
+    const slicedData = characters.slice(0, 50);
+
+
+    slicedData.forEach((elemen) => {
+      const { name, image, location, species, gender } = elemen;
+      const li = document.createElement("li");
+      const n = document.createElement("p");
+      n.textContent = `Name : ${name}`;
+      const i = document.createElement("img");
+      i.setAttribute("src", image);
+      const l = document.createElement("p");
+      l.textContent = `From:${location.name}`;
+      const s = document.createElement("p");
+      s.textContent = `species:${species}`;
+      const g = document.createElement("p");
+      g.textContent = `gender :${gender}`;
+      li.appendChild(i);
+      li.appendChild(n);
+      li.appendChild(l);
+      li.appendChild(s);
+      li.appendChild(g);
+
+      getElements.appendChild(li);
+   
+    });
+  
+} catch (error) {
+  console.log('There was an error', error);
+}
+}
+
+fetchCharacters();
+
+
+```
