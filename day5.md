@@ -15,7 +15,7 @@
 //==>Promise {<pending>}`
 It takes time to fetch data from the network  
 
-###**Promises**
+### **Promises**
 
 **Promises can be in 3 possible states:**
 
@@ -24,7 +24,7 @@ It takes time to fetch data from the network
 3. rejected: sorry couldn't get the value, all done
 It takes time for Promises to resolve, so they are "asynchronous"
 
-###**await**
+### **await**
 **await** lets us tell JS to stop and wait for an asynchronous operation to finish
 
 `let response = await fetch("https://dog.ceo/api/breed/hound/list");
@@ -47,7 +47,7 @@ In the case of a Promise, it waits for it to resolve before continuing with our 
 **We can use ... to collect remaining values**
 `const [babySpice, ...adultSpices] = spices;`
 
-## async functions
+## Async functions
 
 ```javascript
 async function fetchResponse(url) {
@@ -57,4 +57,33 @@ async function fetchResponse(url) {
 ```
 **This tells JS to expect to await async operations inside the function**
 
-#in complete ..........
+---
+## Modules
+* Modules let us split big codebases across multiple files
+
+`<script type="module">
+    //...
+</script>`
+
+- [x] **import && export**
+ `// myModule.js
+const veryUsefulFunction = () => "I came from a module";
+export { veryUsefulFunction };`
+### Debugging
+
+* console.log() (or .warn() or .error()) is one way to understand what's happening when your program runs
+
+```javascript
+function whyIsntThisWorking(input) {
+    console.log("Well at least we got this far");
+    console.log(input);
+    return thingThatDoesntWork(input);}
+```
+
+
+* You can also use the browser's debugger to pause JS and inspect what's happening
+JAVA
+
+
+
+---
