@@ -1,6 +1,6 @@
 ## JavaScript the Hard Parts
 
-# 1# Day Training
+# 6# Day Training
 
 ### Table of Contents
 
