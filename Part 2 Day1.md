@@ -10,7 +10,6 @@
 - [Doggos Quiz Game](#Doggos-Quiz-Game)
 
 ---
-
 ## Introduction
 
 - Analytical problem
