@@ -4,10 +4,10 @@
 
 ### Table of Contents
 
-- [Introduction](#introduction)
+- [Introduction](#)
 - [JavaScript Principles](#javaScript-principles)
-- [Map & filter](#map-&-filter)
-- [Doggos Quiz Game](#Doggos-Quiz-Game)
+- [Functions & Callbacks](#)
+
 
 ---
 ## Introduction
