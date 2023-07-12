@@ -62,3 +62,29 @@ const myNewFunction = outer();
 myNewFunction();
 myNewFunction();
 ``````
+
+#### The bond
+When a function is defined, it gets a bond to the surrounding Local Memory
+(“Variable Environment”) in which it has been defined
+
+#### The ‘backpack’
+- We return incrementCounter’s code (function definition) out of outer into
+global and give it a new name - myNewFunction
+```javascript
+function outer (){
+ let counter = 0;
+ function incrementCounter (){
+ counter ++;
+ }
+ return incrementCounter;
+}
+const myNewFunction = outer();
+myNewFunction();
+myNewFunction();
+const anotherFunction = outer();
+anotherFunction();
+anotherFunction();
+
+```
+
+# tasks
