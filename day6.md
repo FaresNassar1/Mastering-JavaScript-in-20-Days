@@ -144,7 +144,7 @@ console.log(x)
 
 
 ### [TASKS](https://github.com/orjwan-alrajaby/gsg-expressjs-backend-training-2023/blob/main/learning-sprint-1/week2-day1-tasks/tasks.md)
-
+### Question 1
 #### My Solution
 
 ```javascript
@@ -157,5 +157,25 @@ console.log(x)
   }
   const result = mapAsync([1, 2, 3,4,5,6,7,8], MapFunc);
 console.log(result);
+
+```
+---
+
+### Question 2
+
+```javascript
+
+function sumRange(start, end) {
+  if (start < end) {
+    return start + sumRange(start + 1, end);
+  } else {
+    return start;
+  }
+}
+const result = sumRange(1, 5);
+console.log(result);
+//output 15
+
+
 
 ```
