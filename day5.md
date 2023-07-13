@@ -1,152 +1,138 @@
-## JavaScript the Hard Parts
+# 5# Day Training
 
-# 2-1# Day Training
 
 ### Table of Contents
-
-- [Introduction](#)
-- [JavaScript Principles](#javaScript-principles)
-- [Functions & Callbacks](#)
-
-
----
-## Introduction
-
-- Analytical problem
-  solving
-- Engineering
-  approach
-- JavaScript and programming
-  experience
-- Non-technical
-  communication
-- Technical
-  communication
+- [Data Fetching & Promises](#)
+- [Destructuring Data](#)
+- [Async](#)
+- [Modules](#)
+- [Wrapping up](#)
 
 ---
+## Data Fetching & Promises
 
-JavaScript Principles
+`fetch("https://dog.ceo/api/breed/hound/list")
+//==>Promise {<pending>}`
+It takes time to fetch data from the network  
 
-- thread of execution :Goes through the code
-  line-by-line and runs/ ’executes’ each line
+### **Promises**
 
-- Saves ‘data’ like strings and
-  arrays so we can use that data
-  later - in its memory
-  **We can even save code
-  (‘functions’)**
+**Promises can be in 3 possible states:**
 
-* [x] **Execution context**
-      Created to run the code of a
-      function - has 2 parts (we’ve
-      already seen them!)
-* Thread of execution
-* Memory
+1. pending: still waiting for the value, hang tight
+2. fulfilled (aka "resolved"): finally got the value, all done
+3. rejected: sorry couldn't get the value, all done
+It takes time for Promises to resolve, so they are "asynchronous"
 
-* [x] **Call stack**
-* JavaScript keeps track of what
-  function is currently running
-  (where’s the thread of execution)
-* Run a function - add to call stack
-* Finish running the function - JS
-  removes it from call stack
-* Whatever is top of the call stack
-* that’s the function we’re
-  currently running
+### **await**
+**await** lets us tell JS to stop and wait for an asynchronous operation to finish
 
-## Functions & Callbacks
+`let response = await fetch("https://dog.ceo/api/breed/hound/list");
+console.log(response);`
 
-- Enables powerful pro-level functions like map, filter, reduce (a core aspect of
-  functional programming)
-- Makes our code more declarative and readable
-- Forms the backbone of the Codesmith technical interview
+In the case of a Promise, it waits for it to resolve before continuing with our code
 
----
+* Calling the .json() method on the response parses its body as a JSON object
+` let body = await response.json()`
 
-- [x] **Generalizing functions**
+--- 
+## Destructuring
 
-#### Pair programming
+* Destructuring is a fancy way of declaring multiple variables at once
+`let {name, nickname} = spices[0];`
+`let {nickname} = spices[2];`
+`const [baby, ginger, scary, sporty, posh] = spices;`
+`const [,,melB] = spices;`
 
-- **The most effective way to grow as a software engineer**
+**We can use ... to collect remaining values**
+`const [babySpice, ...adultSpices] = spices;`
 
-- Tackle blocks with a partner
-- Stay focused on the problem
-- Refine technical communication
-- Collaborate to solve problem
-
----
-
-**example** Callback function
+## Async functions
 
 ```javascript
-function copyArrayAndManipulate(array, instructions) {
-  const output = [];
-  for (let i = 0; i < array.length; i++) {
-    output.push(instructions(array[i]));
-  }
-  return output;
+async function fetchResponse(url) {
+    const response = await fetch(url);
+    return response;
 }
-function multiplyBy2(input) {
-  return input * 2;
-}
-const result = copyArrayAndManipulate([1, 2, 3], multiplyBy2);
 ```
-
-**Updating our callback function as an arrow function**
-
-```javascript
-function copyArrayAndManipulate(array, instructions) {
-  const output = [];
-  for (let i = 0; i < array.length; i++) {
-    output.push(instructions(array[i]));
-  }
-  return output;
-}
-const multiplyBy2 = (input) => input * 2;
-const result = copyArrayAndManipulate([1, 2, 3], (input) => input * 2);
-```
+**This tells JS to expect to await async operations inside the function**
 
 ---
+## Modules
+* Modules let us split big codebases across multiple files
 
-## Coding Exercises
+`<script type="module">
+    //...
+</script>`
 
-### [Use Higher-Order Functions map, filter, or reduce to Solve a Complex Problem](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/functional-programming/use-higher-order-functions-map-filter-or-reduce-to-solve-a-complex-problem)
+- [x] **import && export**
+ `// myModule.js
+const veryUsefulFunction = () => "I came from a module";
+export { veryUsefulFunction };`
+### Debugging
 
-#### My Solution
-
-```javascript
-const squareList = (arr) => {
-  return arr
-    .filter((num) => num > 0 && num % parseInt(num) === 0)
-    .map((num) => Math.pow(num, 2));
-};
-
-const squaredIntegers = squareList([-3, 4.8, 5, 3, -3.2]);
-console.log(squaredIntegers);
-```
-
-### [Apply Functional Programming to Convert Strings to URL Slugs](freecodecamp.org/learn/javascript-algorithms-and-data-structures/functional-programming/apply-functional-programming-to-convert-strings-to-url-slugs)
-
-#### My Solution
+* console.log() (or .warn() or .error()) is one way to understand what's happening when your program runs
 
 ```javascript
-
-function urlSlug(title) {
-return  title.toLowerCase()
-    .trim()
-    .split(/\s+/)
-    .join("-");
-}
-let x= urlSlug("A Mind Needs Books Like A Sword Needs A Whetstone");
-console.log(x)
+function whyIsntThisWorking(input) {
+    console.log("Well at least we got this far");
+    console.log(input);
+    return thingThatDoesntWork(input);}
 ```
 
 
-### [TASKS](https://github.com/orjwan-alrajaby/gsg-expressjs-backend-training-2023/blob/main/learning-sprint-1/week2-day1-tasks/tasks.md)
+* You can also use the browser's debugger to pause JS and inspect what's happening
+JAVA
 
-#### My Solution
+---
 
-```javascript
+## [Task requirements ](https://github.com/orjwan-alrajaby/gsg-expressjs-backend-training-2023/blob/main/learning-sprint-1/week1-day5-task/task.md)
+
+### My Solution 
+
+```javascript 
+const getElements = document.getElementById("characterList");
+const fetchCharacters = async () => { 
+
+    try {
+    const url = "https://rickandmortyapi.com/api/character?status=alive";
+    const response = await fetch(url);
+    const data = await response.json();
+    const characters = data.results.filter(
+      (character) => (character.status = "Alive")
+    );
+    const slicedData = characters.slice(0, 50);
+
+
+    slicedData.forEach((elemen) => {
+      const { name, image, location, species, gender } = elemen;
+      const li = document.createElement("li");
+      const n = document.createElement("p");
+      n.textContent = `Name : ${name}`;
+      const i = document.createElement("img");
+      i.setAttribute("src", image);
+      const l = document.createElement("p");
+      l.textContent = `From:${location.name}`;
+      const s = document.createElement("p");
+      s.textContent = `species:${species}`;
+      const g = document.createElement("p");
+      g.textContent = `gender :${gender}`;
+      li.appendChild(i);
+      li.appendChild(n);
+      li.appendChild(l);
+      li.appendChild(s);
+      li.appendChild(g);
+
+      getElements.appendChild(li);
+
+    });
+
+} catch (error) {
+  console.log('There was an error', error);
+}
+}
+
+fetchCharacters();
 
 
 ```
