@@ -148,6 +148,14 @@ console.log(x)
 #### My Solution
 
 ```javascript
-
+ async function mapAsync(array, clbFunc) {
+  return await clbFunc(array)
+  }
+   async function MapFunc(input) {
+    return await input.map(input=>input);
+    //You can add a specific process to element 
+  }
+  const result = mapAsync([1, 2, 3,4,5,6,7,8], MapFunc);
+console.log(result);
 
 ```
