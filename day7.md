@@ -64,3 +64,38 @@ console.log("Me first!");
 note: call stack prinHello()
 ```
 
+ES6+ Promises
+
+```javascript
+function display(data){
+ console.log(data)
+}
+const futureData = fetch('https://twitter.com/will/tweets/1')
+futureData.then(display);
+
+console.log("Me first!");
+```
+### ES6+ Solution (Promises)
+
+**Special objects built into JavaScript that get returned immediately when we make
+a call to a web browser API/feature (e.g. fetch) that’s set up to return promises
+(not all are)
+Promises act as a placeholder for the data we expect to get back from the web
+browser feature’s background work**
+
+how our promise-deferred functionality
+example
+```javascript
+function display(data){console.log(data)}
+function printHello(){console.log("Hello");}
+function blockFor300ms(){/* blocks js thread for 300ms }
+setTimeout(printHello, 0);
+const futureData = fetch('https://twitter.com/will/tweets/1')
+futureData.then(display)
+blockFor300ms()
+console.log("Me first!");
+```
+--- 
+
+Tasks
+
