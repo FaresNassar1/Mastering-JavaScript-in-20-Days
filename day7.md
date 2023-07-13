@@ -147,3 +147,33 @@ console.log(baseCube(2))//9
 
 
 ```
+### Question 4:
+Write a closure named compose that takes multiple functions as arguments and returns a new function. The returned function should apply the provided functions in reverse order, passing the result of each function as an argument to the next function.
+
+```javascript
+function compose(...functions) {
+  return function(arg) {
+    let result = arg;
+    for (let i = functions.length - 1; i >= 0; i--) {
+      result = functions[i](result);
+    }
+    return result;
+  };
+}
+function addOne(x) {
+  return x + 1;
+}
+function square(x) {
+  return x ** 2;
+}
+function double(x) {
+  return x * 2;
+}
+const composedFunction = compose(double, square, addOne);
+
+const result = composedFunction(3);
+console.log(result); 
+
+
+
+```
