@@ -88,7 +88,7 @@ letVariable = "new value";`Yes
 
 constVariable = "new Value";` No, **constant**
 
-####`let arr=[1,2,3]`
+#### `let arr=[1,2,3]`
 
 `let arr2=arr`=>arr2=[1,2,3]
 
