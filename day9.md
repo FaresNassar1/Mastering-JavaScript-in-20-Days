@@ -42,4 +42,41 @@ user2.increment = function() {
 };
 
 ```
+**Creating user3 using Object.create**
+`const user3 = Object.create(null);`
 
+---
+
+### Solution 1. Generate objects using a function
+
+```javascript
+function userCreator(name, score) {
+ const newUser = {};
+ newUser.name = name;
+ newUser.score = score;
+ newUser.increment = function() {
+ newUser.score++;
+ };
+ return newUser;
+};
+const user1 = userCreator("Will", 3);
+const user2 = userCreator("Tim", 5);
+user1.increment()
+```
+* Problems: Each time we create a new user we make space in our computer's memory for all our data and functions. But our functions are just copiesIs there a better way?
+#### Solution 2: Using the prototype chain
+```javascript
+function userCreator (name, score) {
+ const newUser = Object.create(userFunctionStore);
+ newUser.name = name;
+ newUser.score = score;
+ return newUser;
+};
+const userFunctionStore = {
+ increment: function(){this.score++;},
+ login: function(){console.log("Logged in");}
+};
+const user1 = userCreator("Will", 3);
+const user2 = userCreator("Tim", 5);
+user1.increment();
+  ...
