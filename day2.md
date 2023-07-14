@@ -9,35 +9,34 @@
 
 
 
-##Operators
+## Operators
 
-####A_O
+### A_O
 
-###`+ - * /`
+#### `+ - * /`
 - `"fares"+"!"`
 - `44+22`
 - `((4 + 1) * 2 * 4) + 2`==>42
 
-####C_O
+### C_O
 
-###`> , < , >= , <= `
+#### `> , < , >= , <= `
 
-####E_O
+### E_O
 
-###`=== , ==, !== ,!=`
-####`1=="1"`=>true!  `1==="1"`=>false
-###.....etc
+####  `=== , ==, !== ,!=`
+#### `1=="1"`=>true!  `1==="1"`=>false
+### .....etc
 
 ---
-##Variables
-####`let text;` text==>undefined
+## Variables
+#### `let text;` text==>undefined
 - [x] Declaring a variable `let bankruptcy;`
- - [x] Assigning a variable `let myDeclaredVariable;
+- [x] Assigning a variable `let myDeclaredVariable;
 myDeclaredVariable = "so value, much wow";`
- - [x] Declaring & assigning at once `let myAssignedVariable = "such efficient, amaze";`
- - [x] Declaring & assigning forever `const myUnchangeableVariable = "Never gonna give you up";`
-  - [x] Using a variable `answerToLife - 10
-`
+- [x] Declaring & assigning at once `let myAssignedVariable = "such efficient, amaze";`
+- [x] Declaring & assigning forever `const myUnchangeableVariable = "Never gonna give you up";`
+- [x] Using a variable `answerToLife - 10
 - [x] Variable names
 ---
 `let scrub = "guy that thinks he's fly";`
@@ -51,7 +50,7 @@ myDeclaredVariable = "so value, much wow";`
 ==busta=guy that thinks he's fly==
 
 ---
-#Arrays
+# Arrays
 
 Arrays let us keep multiple values together in a single collection
 
@@ -72,10 +71,10 @@ by index[]=newvalue
  `let mixedArray = ["pop", 6, "squish", false, document];`
 `.sort()` for sorting the elements in the array
 `.join()` 
-==ex==: `synonyms.join(" ");`
+**ex** : `synonyms.join(" ");`
 the result **fares rafat nassar** 
 `.concat()`
-==ex==: [1, 2, 3].concat([4, 5, 6])
+**ex** [1, 2, 3].concat([4, 5, 6])
 the result **[1,2,3,4,5,6]**
 
 **mutable vs. immutable
@@ -101,7 +100,7 @@ it will be take the new value 😹
 
 `arr2=[1,4,3]`
 
-#....
+# ....
 ---
 
 ## Coding Exercises
