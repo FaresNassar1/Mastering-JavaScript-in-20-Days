@@ -98,5 +98,68 @@ console.log("Me first!");
 ```
 --- 
 
-Tasks
+## [Tasks](https://github.com/orjwan-alrajaby/gsg-expressjs-backend-training-2023/blob/main/learning-sprint-1/week2-day3-tasks/tasks.md)
+### My Solution
+
+```javascript
+const task1 = (cb) => setTimeout(() => {
+  const message = "Task 1 has executed successfully!";
+  cb(message);
+}, 3000)
+const task2 = (cb) => setTimeout(() => {
+  const message = "Task 2 has executed successfully!";
+  cb(message);
+}, 0)
+const task3 = (cb) => setTimeout(() => {
+  const message = "Task 3 has executed successfully!";
+  cb(message);
+}, 1000)
+const task4 = (cb) => setTimeout(() => {
+  const message = "Task 4 has executed successfully!";
+  cb(message);
+}, 2000)
+
+const task5 = (cb) => setTimeout(() => {
+  const message = "Task 5 has executed successfully!";
+  cb(message);
+}, 4000)
+const asyncTasks = [task1, task2, task3, task4, task5];
+const executeInSequenceWithCBs = (tasks, callback) => {
+  const results = [];
+
+  const executeTask = (index) => {
+    if (index >= tasks.length) {
+      callback(null, results);
+      return;
+    }
+    const task = tasks[index];
+
+    task((message) => {
+      results.push(message);
+      executeTask(index + 1);
+    });
+  };
+  executeTask(0);
+};
+```
+Question 2:
+```javascript 
+
+const executeInParallelWithPromises = (apis) => {
+  const promises = apis.map(api => {
+    return fetch(api.apiUrl)
+      .then(response => response.json())
+      .then(apiData => ({
+        apiName: api.apiName,
+        apiUrl: api.apiUrl,
+        apiData: apiData
+      }));
+  });
+
+};
+
+/...................in complete
+```
+
+
 
