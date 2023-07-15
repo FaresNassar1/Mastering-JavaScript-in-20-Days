@@ -98,3 +98,4 @@ const user1 = userCreator("Will", 3);
 const user2 = userCreator("Tim", 5);
 user1.hasOwnProperty('score')
 ```
+
