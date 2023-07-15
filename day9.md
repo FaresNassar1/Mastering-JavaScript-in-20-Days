@@ -98,4 +98,37 @@ const user1 = userCreator("Will", 3);
 const user2 = userCreator("Tim", 5);
 user1.hasOwnProperty('score')
 ```
+### Declaring & calling a new function inside our ‘method’ increment
+```javascript
+function userCreator(name, score) {
+ const newUser = Object.create(userFunctionStore);
+ newUser.name = name;
+ newUser.score = score;
+ return newUser;
+};
+const userFunctionStore = {
+ increment: function() {
+ this.score++;
+ }
+};
+const user1 = userCreator("Will", 3);
+const user2 = userCreator("Tim", 5);
+user1.increment(); 
+```
+- [x] Arrow functions override the normal this rules
+- [x] Introducing the keyword that automates the hard work: new
+1. Create a new user object
+2. Return the new user object
 
+```javascript
+The new keyword automates a lot of our manual work
+function userCreator(name, score){
+ this.name = name;
+ this.score = score;
+}
+userCreator.prototype.increment = function(){ this.score++; };
+userCreator.prototype.login = function(){ console.log("login"); };
+const user1 = new userCreator(“Eva”, 9)
+user1.increment()
+
+```
