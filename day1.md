@@ -33,9 +33,9 @@ When a web page is loaded in a browser, the browser creates a DOM representation
 **document.getElementsByClassName("player").length OR document.querySelectorAll(".player").length**--->the number of elements with class="player"
 **document.getElementById("p1-name").textContent**--->the text inside the element with id="p1-name"
 
-####==MDN(https://developer.mozilla.org/)==
+#### **MDN(https://developer.mozilla.org/)**
 
-#[Tic Tac Toe web site](https://anjana.dev/javascript-first-steps/1-tictactoe.html)
+# [Tic Tac Toe web site](https://anjana.dev/javascript-first-steps/1-tictactoe.html)
 ![alt text](./ex1.png)   
  Exercise
 Type commands in the console to retrieve:
@@ -48,7 +48,7 @@ Type commands in the console to retrieve:
 #### 3. `document.querySelectorAll(".square").length    `
 #### 4. `document.querySelector("h2").textContent`
 ---
-####DOM Editing
+#### DOM Editing
 
 ==EXAMPLE==
 
@@ -64,26 +64,26 @@ add to the end of the element's current text
 
 
 ## Values-DataTypes
-####==44 != "44"==
-####==typeof==:
-#####tells you the type of a value
+#### `44 != "44"`
+#### `typeof==`:
+#####t ells you the type of a value
 EX: `typeof "44"`=>string
 EX: `typeof 44`=>number
-###Data
+### Data
 - Primitive types 
 str,num,boo.... + undefined,null
-==undefined != null==
-==typeof true != typeof "true"==
+undefined != null
+typeof true != typeof "true"
 `typeof "some string".length`==>Number
 `typeof null`=>==object==
 - What are strings made of?
-==characters==.
+  characters.
 `"myname is fares nassar".length`==>22 char ==with space==.
 `"fares nassar"[1]`= =>a
 `"nassar".indexOf("r")`= =>5
 if ("g") not found ==> ==-1==
 ==includes, startswith===> to check = ==>boolean.==
-####Connecting strings together
+#### Connecting strings together
 `"fares "+"nassar"`==>"fares nassar"
 
 ---
