@@ -99,6 +99,9 @@ console.log("Me first!");
 --- 
 
 ## [Tasks](https://github.com/orjwan-alrajaby/gsg-expressjs-backend-training-2023/blob/main/learning-sprint-1/week2-day3-tasks/tasks.md)
+### Question 1:
+
+
 ### My Solution
 
 ```javascript
@@ -154,24 +157,115 @@ executeInSequenceWithCBs(asyncTasks, (messages) => {
 });
 
 ```
-Question 2:
+### Question 2:
 ```javascript 
 
+const apis = [
+  {
+    apiName: "products", 
+    apiUrl: "https://dummyjson.com/products",
+  }, 
+  {
+    apiName: "users", 
+    apiUrl: "https://dummyjson.com/users",
+  }, 
+  {
+    apiName: "posts", 
+    apiUrl: "https://dummyjson.com/posts",
+  }, 
+  {
+    apiName: "comments", 
+    apiUrl: "https://dummyjson.com/comments",
+  }
+];
+
 const executeInParallelWithPromises = (apis) => {
-  const promises = apis.map(api => {
+  const apiPromises = apis.map(api => {
     return fetch(api.apiUrl)
       .then(response => response.json())
       .then(apiData => ({
         apiName: api.apiName,
         apiUrl: api.apiUrl,
-        apiData: apiData
+        apiData: apiData,
+      }))
+      .catch(error => ({
+        apiName: api.apiName,
+        apiUrl: api.apiUrl,
+        apiData: null,
+        error: error.message,
       }));
   });
 
+  return Promise.all(apiPromises);
 };
 
-/...................in complete
+// Usage example
+executeInParallelWithPromises(apis)
+  .then(results => {
+    console.log(results);
+  })
+  .catch(error => {
+    console.error(error);
+  });
+
 ```
 
+### Question 3:
 
+```javascript
+const apis = [
+  {
+    apiName: "products", 
+    apiUrl: "https://dummyjson.com/products",
+  }, 
+  {
+    apiName: "users", 
+    apiUrl: "https://dummyjson.com/users",
+  }, 
+  {
+    apiName: "posts", 
+    apiUrl: "https://dummyjson.com/posts",
+  }, 
+  {
+    apiName: "comments", 
+    apiUrl: "https://dummyjson.com/comments",
+  }
+];
+
+const executeInSequenceWithPromises = async (apis) => {
+  const results = [];
+
+  for (const api of apis) {
+    try {
+      const response = await fetch(api.apiUrl);
+      const apiData = await response.json();
+      results.push({
+        apiName: api.apiName,
+        apiUrl: api.apiUrl,
+        apiData: apiData,
+      });
+    } catch (error) {
+      results.push({
+        apiName: api.apiName,
+        apiUrl: api.apiUrl,
+        apiData: null,
+        error: error.message,
+      });
+    }
+  }
+
+  return results;
+};
+
+// Usage example
+executeInSequenceWithPromises(apis)
+  .then(results => {
+    console.log(results);
+  })
+  .catch(error => {
+    console.error(error);
+  });
+
+
+```
 
