@@ -105,42 +105,54 @@ console.log("Me first!");
 const task1 = (cb) => setTimeout(() => {
   const message = "Task 1 has executed successfully!";
   cb(message);
-}, 3000)
+}, 3000);
+
 const task2 = (cb) => setTimeout(() => {
   const message = "Task 2 has executed successfully!";
   cb(message);
-}, 0)
+}, 0);
+
 const task3 = (cb) => setTimeout(() => {
   const message = "Task 3 has executed successfully!";
   cb(message);
-}, 1000)
+}, 1000);
+
 const task4 = (cb) => setTimeout(() => {
   const message = "Task 4 has executed successfully!";
   cb(message);
-}, 2000)
+}, 2000);
 
 const task5 = (cb) => setTimeout(() => {
   const message = "Task 5 has executed successfully!";
   cb(message);
-}, 4000)
+}, 4000);
+
 const asyncTasks = [task1, task2, task3, task4, task5];
+
 const executeInSequenceWithCBs = (tasks, callback) => {
   const results = [];
 
   const executeTask = (index) => {
     if (index >= tasks.length) {
-      callback(null, results);
+      callback(results);
       return;
     }
-    const task = tasks[index];
 
-    task((message) => {
+    const cb = (message) => {
       results.push(message);
       executeTask(index + 1);
-    });
+    };
+
+    tasks[index](cb);
   };
+
   executeTask(0);
 };
+
+executeInSequenceWithCBs(asyncTasks, (messages) => {
+  console.log(messages); 
+});
+
 ```
 Question 2:
 ```javascript 
