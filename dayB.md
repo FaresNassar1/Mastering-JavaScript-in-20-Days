@@ -124,6 +124,23 @@ convertToObj(promisesArray).then((result) => {
  ### SCOPE & HOISTING QUESTIONS:
  #### QUESTION #1:
 
-**C) 1, ReferenceError, ReferenceError**
+**C) 1, ReferenceError, ReferenceError**.
+
+`a` is declared with var, making it function-scoped. It is accessible throughout the whole function, but its value will be undefined if the if condition is false.
+`b` and `c` are declared with let and const, respectively, making them block-scoped. They are only accessible within the if block and cannot be accessed outside of it.
+
+### QUESTION #2:
+
+`A) undefined, b&c ReferenceError`
+In the testScope2 function, the variables a, b, and c are accessed before they are declared and initialized. This results in the following behavior:
+
+a is declared using var, so it is hoisted to the top of the function and has an initial value of undefined. The console.log(a) statement logs undefined.
+b and c are declared using let and const, respectively, making them block-scoped. They are not hoisted and cannot be accessed before their declarations. The console.log(b) and console.log(c) statements encounter a ReferenceError because b and c are not defined in this scope.
+
+QUESTION #3:
+`[36, 100, 45]
+[1, 2, 3]
+[1, 100, 45]`
+
 
 
