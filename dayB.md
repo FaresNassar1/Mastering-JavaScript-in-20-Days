@@ -30,6 +30,22 @@ isn't typed introduces uncertainty
 ` var x="fares";`
 `x={name:nassar};`
 **Error:can't assign object to string**
-and the same if `var x:string="fares";  x={name:"nassar"};//error ca....`
+and the same if 
+`var x:string="fares";  x={name:"nassar"};//error ca....`
+**note**: can't subtract string 🔨
 
+## Pros
+1. They make types more obvious in code
+2. Familiarity: they look like other language's type systems
+3. Extremely popular these days
+## corns 
+1. They require* a build process, which raises the barrier to entry
+2. Their sophistication can be intimidating to those without prior formal types experience
+   etc....
 
+   ---
+
+   ## Scope
+
+* Scope: where to look
+for things
