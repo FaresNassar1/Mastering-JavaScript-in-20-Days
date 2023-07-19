@@ -138,9 +138,10 @@ a is declared using var, so it is hoisted to the top of the function and has an 
 b and c are declared using let and const, respectively, making them block-scoped. They are not hoisted and cannot be accessed before their declarations. The console.log(b) and console.log(c) statements encounter a ReferenceError because b and c are not defined in this scope.
 
 QUESTION #3:
-`[36, 100, 45]
-[1, 2, 3]
-[1, 100, 45]`
+
+`[36, 100, 45] [1, 2, 3] [1, 100, 45]`
 
 
-
+The first console.log() outputs [36, 100, 45], showing the initial values of variables a, b, and c.
+The second console.log() inside the if block outputs [1, 2, 3], reflecting the updated values of variables a, b, and c inside the block.
+The third console.log() outside the if block outputs [1, 100, 45], showing that the outer variable a was updated by the if block, but the values of b and c remain the same.
