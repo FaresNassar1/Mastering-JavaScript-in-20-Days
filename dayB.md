@@ -30,3 +30,6 @@ isn't typed introduces uncertainty
 ` var x="fares";`
 `x={name:nassar};`
 **Error:can't assign object to string**
+and the same if `var x:string="fares";  x={name:"nassar"};//error ca....`
+
+
