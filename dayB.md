@@ -47,5 +47,83 @@ and the same if
 
    ## Scope
 
-* Scope: where to look
-for things
+* Scope: where to look for things
+
+     **JavaScript organizes scopes with functions and blocks**
+  - [x] scope
+  - [x] use strict
+  - [x] undefined vs undeclared
+
+  ---
+  ## [Tasks](https://github.com/orjwan-alrajaby/gsg-expressjs-backend-training-2023/blob/main/learning-sprint-1/week3-day2-tasks/tasks.md)
+
+### Question 1:
+
+
+### My Solution
+```javascript
+interface HelloWorldResponse {
+  message: string;
+}
+
+interface CheckBooleanResponse {
+  boolean: boolean;
+}
+
+interface ReturnObjResponse {
+  x: string;
+  y: number;
+}
+
+// Define the promises with appropriate types
+const sayHelloWorld: Promise<HelloWorldResponse> = new Promise((resolve, reject) => {
+  resolve({ message: "Hello world!" });
+});
+
+const checkBoolean = (boolean: boolean): Promise<CheckBooleanResponse> => new Promise((resolve, reject) => {
+  if (boolean) {
+    resolve({ boolean });
+  } else {
+    reject(`Input is false :(`);
+  }
+});
+
+const returnObj: Promise<ReturnObjResponse> = new Promise((resolve, reject) => {
+  resolve({
+    x: "meow",
+    y: 45,
+  });
+});
+
+const promisesArray = [sayHelloWorld, checkBoolean(true), returnObj];
+
+// Define the return type for convertToObj
+interface ConvertedObject {
+  [key: string]: HelloWorldResponse | CheckBooleanResponse | ReturnObjResponse;
+}
+
+const convertToObj = (array: Promise<any>[]): Promise<ConvertedObject> => {
+  return Promise.all(array).then((results) => {
+    const keys = ['sayHelloWorld', 'checkBoolean', 'returnObj'];
+    const obj: ConvertedObject = {};
+
+    results.forEach((result, index) => {
+      obj[keys[index]] = result;
+    });
+
+    return obj;
+  });
+};
+
+// Usage
+convertToObj(promisesArray).then((result) => {
+  console.log(result);
+});
+
+```
+ ### SCOPE & HOISTING QUESTIONS:
+ #### QUESTION #1:
+
+**C) 1, ReferenceError, ReferenceError**
+
+
