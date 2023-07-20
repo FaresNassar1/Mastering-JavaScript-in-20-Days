@@ -10,3 +10,4 @@
 - [Advanced Scope ](#)
 
 ---
+Scope & Function Expressions
