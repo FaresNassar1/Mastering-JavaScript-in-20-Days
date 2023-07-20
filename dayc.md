@@ -10,4 +10,11 @@
 - [Advanced Scope ](#)
 
 ---
-Scope & Function Expressions
+## Scope & Function Expressions
+
+* ### Named Function Expressions
+1. Reliable function self-reference (recursion, etc)
+2. More debuggable stack traces
+3. More self-documenting code
+   
+ EX:  `var key =function key(){};`
