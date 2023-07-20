@@ -24,3 +24,6 @@
 * ### Anonymous Arrow Functions
   `var key=()=>{};`
   #### (Named) Function Declaration > Named Function Expression > Anonymous Function Expression
+
+- [x] lexical scope
+- [x] dynamic scope 
