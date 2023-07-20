@@ -122,3 +122,18 @@ preservedGreet('Hello'); // Output: "Hello, John!"
 
 
 ```
+### Question 3:
+ 
+ #### 1:In Example 1, the outer1 function defines a variable x with a value of 10. Inside the outer1 function, there is another function inner1 defined. When inner1 is called, it logs the value of the variable x, which is defined in the scope of outer1. Since inner1 is a closure, it has access to the variables in its outer function's scope.
+
+When outer1 is called (outer1()), it executes the inner1 function, which logs the value of the variable x. Since inner1 has access to the variable x in its outer function's scope (outer1), it logs the value of x, which is 10.
+
+So, the output of Example 1 is:10
+
+#### 2: In Example 2, the outer2 function defines a variable x with a value of 10. Inside the outer2 function, there is another function inner2 defined. Inside the inner2 function, there is another variable x defined with a value of 20. This creates a new variable x that shadows the outer x.
+
+When inner2 is called, it logs the value of the variable x in its own scope, which is 20. Since inner2 has a variable x defined within its own scope, it uses that variable, not the one from its outer function's scope (outer2).
+
+When outer2 is called (outer2()), it executes the inner2 function, which logs the value of the inner x, which is 20.
+
+So, the output of Example 2 is:20
