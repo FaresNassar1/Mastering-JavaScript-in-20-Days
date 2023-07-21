@@ -1,6 +1,6 @@
 ## JavaScript DEEP JS FOUNDATIONS
 
-# 4-4# Day Training
+# 3-4# Day Training
 
 ---
 
