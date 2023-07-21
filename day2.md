@@ -46,8 +46,9 @@ myDeclaredVariable = "so value, much wow";`
 `scrub = "guy that can't get no love from me";`
 
 **the result**
-==scrub=guy that can't get no love from me==
-==busta=guy that thinks he's fly==
+`//scrub=guy that can't get no love from me` 
+
+`//busta=guy that thinks he's fly`
 
 ---
 # Arrays
