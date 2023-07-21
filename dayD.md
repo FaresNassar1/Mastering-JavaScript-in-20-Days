@@ -69,6 +69,19 @@ The "Temporal Dead Zone" (TDZ) in JavaScript refers to a temporary period before
 
 ## Closure
 
+Closure is when a function “remembers” its
+lexical scope even when the function is
+executed outside that lexical scope.
 
+```javascript
+function init() {
+  var name = "Mozilla"; // name is a local variable created by init
+  function displayName() {
+    // displayName() is the inner function, that forms the closure
+    console.log(name); // use variable declared in the parent function
+  }
+  displayName();
+}
+init();
 
-
+```
