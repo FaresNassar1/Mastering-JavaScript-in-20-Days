@@ -88,3 +88,12 @@ init();
 
 ## Closure: NOT capturing a value
 
+- [x] Closure: loops
+
+## Modules
+
+* Namespace, NOT a module
+* Modules encapsulate data and behavior
+(methods) together. The state (data) of a
+module is held by its methods via closure.
+
