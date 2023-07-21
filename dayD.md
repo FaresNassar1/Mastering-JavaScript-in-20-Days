@@ -97,3 +97,24 @@ init();
 (methods) together. The state (data) of a
 module is held by its methods via closure.
 
+## [Tasks](https://github.com/orjwan-alrajaby/gsg-expressjs-backend-training-2023/blob/main/learning-sprint-1/week3-day4-tasks/tasks.md)
+
+### Question 1:
+
+### My Solution
+```javascript 
+
+for (let i = 0; i < 5; i++) {
+  setTimeout(function() {
+    console.log("value of [i] is: ", i);
+  }, 100);
+}
+////Without changing anything in the for loop's code itself, provide a solution to fix it.
+for (var i = 0; i < 5; i++) {
+  setTimeout(() => {
+    console.log("value of [i] is: ", i);
+  }, 100);
+}
+
+
+```
