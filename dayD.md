@@ -116,5 +116,84 @@ for (var i = 0; i < 5; i++) {
   }, 100);
 }
 
+```
+### Question 2:
+
+```javascript
+
+let array = [];
+for (let i = 0; i < 5; i++) {
+   array.push(i);
+}
+console.log("Current array is: ", array);
+
+```
+### Question 3:
+
+```javascript
+let functions = [];
+
+for (var i = 0; i < 5; i++) {
+  (function(i) {
+    functions.push(() => {
+      console.log("Current value of i is:", i);
+    });
+  })(i);
+}
+
+functions.forEach((func) => func());
+
+
+```
+## CLOSURE:
+### QUESTION #1
+```javascript
+function privateCounter() {
+  let count = 0; 
+  function increment() {
+    count++;
+  }
+
+  function getCount() {
+    return count;
+  }
+
+  return {
+    increment: increment,
+    getCount: getCount
+  };
+}
+const counter = privateCounter();
+counter.increment();
+counter.increment();
+counter.increment();
+
+console.log(counter.getCount());
+
+
+```
+### QUESTION #2
+```javascript
+function generateFibonacci(count) {
+  let currentCount = 0;
+  let prevNumber = 0;
+  let currentNumber = 1;
+  function fibonacci() {
+    if (currentCount >= count) {
+      return null; 
+    }
+    currentCount++;
+    let nextNumber = prevNumber + currentNumber;
+    prevNumber = currentNumber;
+    currentNumber = nextNumber;
+    return prevNumber;
+  }
+  return fibonacci;
+}
+const fibonacciClosure = generateFibonacci(10);
+for (let i = 0; i < 10; i++) {
+  console.log(fibonacciClosure());
+}
+
 
 ```
