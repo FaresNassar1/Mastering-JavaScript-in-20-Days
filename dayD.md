@@ -65,6 +65,9 @@ function hello() {
 # TDZ
 The "Temporal Dead Zone" (TDZ) in JavaScript refers to a temporary period before variables declared with "let" and "const" are initialized. During this time, accessing the variables will result in a "ReferenceError." The TDZ starts when the scope begins and ends when the variable is defined. It promotes safer code by preventing access to variables before they are defined, helping catch errors and enforcing better coding practices. Always make sure to define variables before using them in your code.
 
+---
+
+## Closure
 
 
 
