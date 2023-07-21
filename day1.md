@@ -11,7 +11,7 @@ Welcome to the first day of JavaScript training! In this training session, we wi
 
 ## What is JavaScript?
 javaScript is a high-level programming language that is primarily used for developing dynamic and interactive web content. It allows you to add functionality and interactivity to websites, making them more engaging for users. JavaScript can be used to create features such as form validation, interactive maps, sliders, animations, and much more.
-##why?
+## why?
 JavaScript is widely adopted and supported by all modern web browsers, making it an essential language for web development. It is the standard client-side scripting language for web browsers and provides the ability to create dynamic web pages that can respond to user actions in real-time. Additionally, JavaScript can also be used on the server-side (Node.js) to build scalable and efficient web applications.
 
 **HTML versus CSS versus Javascript** :
@@ -64,9 +64,12 @@ add to the end of the element's current text
 
 
 ## Values-DataTypes
+
 #### `44 != "44"`
+
 #### `typeof==`:
-#####t ells you the type of a value
+
+##### tells you the type of a value
 EX: `typeof "44"`=>string
 EX: `typeof 44`=>number
 ### Data
