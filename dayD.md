@@ -85,3 +85,6 @@ function init() {
 init();
 
 ```
+
+## Closure: NOT capturing a value
+
