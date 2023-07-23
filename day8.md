@@ -60,9 +60,9 @@ Our core JavaScript engine has 3 main parts:
 function printHello(){ console.log("Hello"); }
 setTimeout(printHello,1000);
 console.log("Me first!");
-/// 0ms printHello x not complete . ==>
- 1ms Me first! then after 1000ms  Hello
-note: call stack prinHello()
+// 0ms printHello x not complete . ==>
+// 1ms Me first! then after 1000ms  Hello
+//note: call stack prinHello()
 ```
 
 ES6+ Promises
